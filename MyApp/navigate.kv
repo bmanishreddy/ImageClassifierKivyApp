@@ -1,0 +1,29 @@
+WindowManager:
+    MainWindow:
+    ScecondWindow:
+<MainWindow>:
+    name: "main"
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols: 2
+            Label:
+                text: "Password: "
+            TextInput:
+                id:passw
+                multiline:False
+        Button:
+            text: "submit"
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "left"
+
+<ScecondWindow>:
+    name: "second"
+
+    Button:
+        text: "Go Back"
+        on_release:
+            app.root.current = "main"
+            root.manager.transition.direction = "right"
